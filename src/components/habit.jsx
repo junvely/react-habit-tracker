@@ -2,13 +2,13 @@ import React, { Component } from "react";
 
 class Habit extends Component {
   handleIncrement = () => {
-    this.props.onIncrease();
+    this.props.onIncrease(this.props.habit);
   };
   handleDecrement = () => {
-    this.props.onIncrease();
+    this.props.onDecrease(this.props.habit);
   };
   handleDelete = () => {
-    this.props.onDelete();
+    this.props.onDelete(this.props.habit);
   };
 
   render() {
@@ -21,19 +21,19 @@ class Habit extends Component {
           className="habit-button habit-increase"
           onClick={this.handleIncrement}
         >
-          <i class="fa-solid fa-square-plus"></i>
+          <i className="fa-solid fa-square-plus"></i>
         </button>
         <button
           className="habit-button habit-decrease"
           onClick={this.handleDecrement}
         >
-          <i class="fa-solid fa-square-minus"></i>
+          <i className="fa-solid fa-square-minus"></i>
         </button>
         <button
           className="habit-button habit-delete"
           onClick={this.handleDelete}
         >
-          <i class="fa-solid fa-trash"></i>
+          <i className="fa-solid fa-trash"></i>
         </button>
       </li>
     );

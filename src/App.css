@@ -1,8 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 button {
   outline: none;
   background: transparent;
   border: 0;
   cursor: pointer;
+}
+nav {
+  background-color: palevioletred;
+  padding: 3% 0;
+}
+h1 {
+  font-size: 3rem;
+}
+input {
+  width: 60%;
+  line-height: 2rem;
+  text-align: left;
+  padding-left: 0.5rem;
+  margin-top: 3%;
+}
+button.submitBtn {
+  width: 3rem;
+  line-height: 1.5rem;
+  background-color: palevioletred;
+  border-radius: 3px;
+  margin-left: 1em;
 }
 
 .habit {
@@ -27,7 +53,7 @@ button {
 
 .habit-button {
   font-size: 2.5rem;
-  margin: 0 0.1em;
+  margin: 0 0.2em;
   background-origin: transparent;
 }
 
@@ -43,4 +69,13 @@ button {
 .habit-delete {
   font-size: 2rem;
   color: green;
+}
+
+button.reset {
+  line-height: 1.5rem;
+  background-color: palevioletred;
+  padding: 0.3em 0.5em;
+  margin: 2em 0;
+  border-radius: 3px;
+  text-align: left;
 }
