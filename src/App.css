@@ -14,10 +14,21 @@ nav {
   padding: 3% 0;
 }
 h1 {
+  display: inline;
   font-size: 3rem;
 }
+span.count {
+  width: 3rem;
+  line-height: 3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background-color: orange;
+  border-radius: 50%;
+  margin-left: 20px;
+  display: inline-block;
+}
 input {
-  width: 60%;
+  width: 40%;
   line-height: 2rem;
   text-align: left;
   padding-left: 0.5rem;

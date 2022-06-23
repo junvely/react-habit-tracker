@@ -5,6 +5,7 @@ class Navbar extends Component {
     return (
       <nav>
         <h1>❤️‍🔥Habit Tracker</h1>
+        <span className="count">{this.props.countHabit}</span>
       </nav>
     );
   }

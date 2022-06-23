@@ -1,42 +1,25 @@
 import React, { Component } from "react";
 import Habit from "./habit";
+import Form from "./form";
 
 class Habits extends Component {
-  state = {
-    habits: [
-      { id: 1, name: "reading", count: 0 },
-      { id: 2, name: "running", count: 0 },
-      { id: 3, name: "coding", count: 0 },
-    ],
-  };
   handleIncrement = (habit) => {
-    console.log(habit);
-    const habits = [...this.state.habits];
-    const index = habits.indexOf(habit);
-    habits[index].count++;
-    this.setState({ habits });
+    this.props.onIncrease(habit);
   };
   handleDecrement = (habit) => {
-    const habits = [...this.state.habits];
-    const index = habits.indexOf(habit);
-    const count = habits[index].count - 1;
-    habits[index].count = count < 0 ? 0 : count;
-    this.setState({ habits });
+    this.props.onDecrease(habit);
   };
   handleDelete = (habit) => {
-    const habits = this.state.habits.filter(
-      (newHabit) => newHabit.id !== habit.id
-    );
-    this.setState({ habits });
+    this.props.onDelete(habit);
   };
 
   render() {
+    const habitObj = this.props.habits;
     return (
       <>
-        <input type="text" placeholder="Habit" />
-        <button className="submitBtn">Add</button>
+        <Form></Form>
         <ul>
-          {this.state.habits.map((habit) => (
+          {habitObj.map((habit) => (
             <Habit
               key={habit.id}
               habit={habit}
