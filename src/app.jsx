@@ -31,11 +31,16 @@ class App extends Component {
     this.setState({ habits });
   };
   handleHabitAdd = (input) => {
-    const habit = { id: Date.now(), name: input, count: 0 };
-    this.state.habits.push(habit);
     const habits = this.state.habits;
+    const habit = { id: Date.now(), name: input, count: 0 };
+    habits.push(habit);
     this.setState({ habits });
   };
+  handleReset = () => {
+    const habits = [];
+    this.setState({ habits });
+  };
+
   render() {
     return (
       <>
@@ -50,6 +55,7 @@ class App extends Component {
           onDecrease={this.handleDecrement}
           onDelete={this.handleDelete}
           onAdd={this.handleHabitAdd}
+          onReset={this.handleReset}
         />
       </>
     );
