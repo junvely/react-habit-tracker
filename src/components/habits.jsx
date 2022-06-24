@@ -1,31 +1,20 @@
 import React, { Component } from "react";
 import Habit from "./habit";
-import Form from "./form";
+import HabitForm from "./form";
 
 class Habits extends Component {
-  handleIncrement = (habit) => {
-    this.props.onIncrease(habit);
-  };
-  handleDecrement = (habit) => {
-    this.props.onDecrease(habit);
-  };
-  handleDelete = (habit) => {
-    this.props.onDelete(habit);
-  };
-
   render() {
-    const habitObj = this.props.habits;
     return (
       <>
-        <Form></Form>
+        <HabitForm onAdd={this.props.onAdd}></HabitForm>
         <ul>
-          {habitObj.map((habit) => (
+          {this.props.habits.map((habit) => (
             <Habit
               key={habit.id}
               habit={habit}
-              onIncrease={this.handleIncrement}
-              onDecrease={this.handleDecrement}
-              onDelete={this.handleDelete}
+              onIncrease={this.props.onIncrease}
+              onDecrease={this.props.onDecrease}
+              onDelete={this.props.onDelete}
             />
           ))}
         </ul>

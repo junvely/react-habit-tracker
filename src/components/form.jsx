@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 
-class Form extends Component {
+class HabitForm extends Component {
+  handleHabitAdd = (e) => {
+    e.preventDefault();
+    const input = document.querySelector("input");
+    this.props.onAdd(input.value);
+  };
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleHabitAdd}>
         <input type="text" placeholder="Habit" />
         <button type="submit" className="submitBtn">
           Add
@@ -13,4 +18,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default HabitForm;

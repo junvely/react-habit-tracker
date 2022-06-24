@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 button {
   outline: none;
@@ -13,11 +14,11 @@ nav {
   background-color: palevioletred;
   padding: 3% 0;
 }
-h1 {
+nav h1 {
   display: inline;
   font-size: 3rem;
 }
-span.count {
+nav span.count {
   width: 3rem;
   line-height: 3rem;
   font-size: 2.5rem;
