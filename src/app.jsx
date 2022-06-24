@@ -30,14 +30,15 @@ class App extends Component {
     );
     this.setState({ habits });
   };
-  handleHabitAdd = (input) => {
-    const habits = this.state.habits;
-    const habit = { id: Date.now(), name: input, count: 0 };
-    habits.push(habit);
+  handleHabitAdd = (name) => {
+    const habits = [...this.state.habits, { id: Date.now(), name, count: 0 }];
     this.setState({ habits });
   };
   handleReset = () => {
-    const habits = [];
+    const habits = this.state.habits.map((habit) => {
+      habit.count = 0;
+      return habit;
+    });
     this.setState({ habits });
   };
 
