@@ -1,6 +1,8 @@
 # Habit-tracker(React)
 
-리액트 Habit-tracker
+리액트 Habit-tracker Application
+
+https://junvely.github.io/react-habit-tracker/
 
 # 📝Habit-tracker
 
